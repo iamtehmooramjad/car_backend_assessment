@@ -17,7 +17,7 @@ const login = async (req, res) => {
 
       if (passwordMatched) {
         let userData = {
-          id: userFound?.id,
+          id: userFound?._id,
           email: userFound?.email,
         };
         const token = jwt.sign(userData, process.env.JWT_SECRETKEY,{
